@@ -4,24 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Le Ba Phong</title>
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <header>
       <img
         src="https://fda.neu.edu.vn/wp-content/uploads/2026/01/Logo_FDA_2026-880x138.png"
-        alt="logo"
-        width="880px"
-        height="138px"
+        alt="FDA NEU Logo"
+        width="880"
+        height="138"
       />
-      <h2>Web Design And Programming</h2>
+      <h1>Web Design And Programming</h1>
     </header>
+
     <nav>
       <a href="#overview">Overview</a>
       <a href="#core-features">Features</a>
       <a href="#result">Results</a>
       <a href="#conclusion">Conclusion</a>
-      <a href="#contact us">Contact</a>
+      <a href="#contact-us">Contact</a>
     </nav>
+
     <main>
       <section id="overview">
         <h2>Overview</h2>
@@ -29,15 +32,16 @@
           Welcome to my website! This is a simple HTML page that demonstrates
           various HTML elements and their usage.
         </p>
+
         <table>
           <caption>
-           <strong>member details</strong>
+            <strong>Member Details</strong>
           </caption>
           <thead>
             <tr>
-              <th>No</th>
-              <th>Name</th>
-              <th>Description</th>
+              <th scope="col">No</th>
+              <th scope="col">Name</th>
+              <th scope="col">Description</th>
             </tr>
           </thead>
           <tbody>
@@ -59,6 +63,7 @@
           </tbody>
         </table>
       </section>
+
       <section id="core-features">
         <h2>Core Features</h2>
         <ul>
@@ -67,6 +72,7 @@
           <li>Accessibility</li>
         </ul>
       </section>
+
       <section id="result">
         <h2>Results</h2>
         <p>
@@ -75,6 +81,7 @@
           and more.
         </p>
       </section>
+
       <section id="conclusion">
         <h2>Conclusion</h2>
         <p>
@@ -83,34 +90,53 @@
           elements to create a functional and visually appealing webpage.
         </p>
       </section>
-      <section id="contact us">
+
+      <section id="contact-us">
         <h2>Contact</h2>
-        <form action="">
-          <label for="name">Name:</label>
-          <input type="text" id="name" name="name" required />
-          <br/>
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required />
-          <br/>
-          <label for="age">Age:</label>
-          <input type="number" id="age" name="age" min="1" />
-          <br/>
-          <label for="message">Message:</label>
-          <textarea id="message" name="message" required></textarea>
-          <br/>
-          <label for="gender">Gender:</label>
-          <select id="gender" name="gender">
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-          </select>
-          <br/>
+        <form action="#" method="post">
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+
+          <div class="form-group">
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" min="1" />
+          </div>
+
+          <div class="form-group">
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender">
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+
           <button type="submit">Send</button>
         </form>
-        <p>
-          If you have any questions or feedback, feel free to reach out to me at
-          <a href="mailto:phong.leba@neu.edu.vn">phong.leba@neu.edu.vn</a>.
-        </p>
       </section>
     </main>
+      <div class="dashboard">
+      <div class="card product" id="top-products">Product 1</div>
+      <div class="card product">Product 2</div>
+      <div class="card product">Product 3</div>
+    </div>
+    </body>
+    <br/>
+    <div class="container">
+      <div class="card product" id="top-products">Product 1</div>
+      <div class="card product">Product 2</div>
+      <div class="card product">Product 3</div>
+    </div>
   </body>
 </html>

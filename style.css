@@ -1,0 +1,42 @@
+.container {
+    font-family:"Arial", sans-serif;
+    color:orange;
+}
+
+.card {
+    font-family:"Arial", sans-serif;
+    font-size: 30px;
+    color:blue;
+}
+.dashboard .card {
+    font-family:"Arial", sans-serif;
+    font-size: 30px;
+    color:blue;
+
+    margin: 10px 20px 30px 40px;
+    padding:5px;
+    background-color: lightgray;
+
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap:16px;
+
+}
+
+.dashboard .card:hover {
+    font-family:"Arial", sans-serif;
+    font-size: 50px;
+    color:red;
+}
+
+.product {
+    color:blue;
+}
+
+#top-products {
+    color:green;
+}
