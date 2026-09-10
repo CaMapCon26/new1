@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>House Price Prediction</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main>
+      <h1>House Price Prediction</h1>
+
+      <form id="house-form">
+        <label for="area">Area (m²)</label>
+        <input
+          id="area"
+          name="area"
+          type="number"
+          min="0"
+          step="any"
+          required
+        />
+
+        <label for="bedrooms">Number of bedrooms</label>
+        <input
+          id="bedrooms"
+          name="bedrooms"
+          type="number"
+          min="0"
+          step="1"
+          required
+        />
+
+        <label for="location">Location (optional)</label>
+        <input
+          id="location"
+          name="location"
+          type="text"
+          placeholder="hanoi or hcmc"
+        />
+
+        <button type="submit">Predict price</button>
+      </form>
+
+      <p id="result" role="status" aria-live="polite"></p>
+    </main>
+
+    <script>
+      const form = document.getElementById("house-form");
+      const result = document.getElementById("result");
+      const formatVnd = (price) =>
+        `${Math.round(price).toLocaleString("vi-VN")}đ`;
+
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        const params = new URLSearchParams({
+          area: form.area.value,
+          bedrooms: form.bedrooms.value,
+        });
+        if (form.location.value.trim()) {
+          params.set("location", form.location.value.trim());
+        }
+
+        result.textContent = "Loading...";
+        try {
+          const response = await fetch(`/predict?${params}`);
+          const data = await response.json();
+          if (!response.ok) {
+            throw new Error(data.detail || "Prediction failed.");
+          }
+          result.textContent = `Predicted price: ${formatVnd(data.predicted_price)}`;
+        } catch (error) {
+          result.textContent = `Error: ${error.message}`;
+        }
+      });
+    </script>
+  </body>
+</html>
